@@ -2,7 +2,7 @@
   "name": "nodepad",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://skripkin.github.io/react-nodepad-page",
+  "homepage": "https://skripkin.github.io/Nodepad/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
