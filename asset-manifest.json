@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-nodepad-page/static/css/main.0c0beebe.css",
-    "main.js": "/react-nodepad-page/static/js/main.b9ce4a09.js",
-    "static/js/787.3343e89e.chunk.js": "/react-nodepad-page/static/js/787.3343e89e.chunk.js",
-    "index.html": "/react-nodepad-page/index.html",
-    "main.0c0beebe.css.map": "/react-nodepad-page/static/css/main.0c0beebe.css.map",
-    "main.b9ce4a09.js.map": "/react-nodepad-page/static/js/main.b9ce4a09.js.map",
-    "787.3343e89e.chunk.js.map": "/react-nodepad-page/static/js/787.3343e89e.chunk.js.map"
+    "main.css": "/Nodepad/static/css/main.0c0beebe.css",
+    "main.js": "/Nodepad/static/js/main.92d9e8e3.js",
+    "static/js/787.3343e89e.chunk.js": "/Nodepad/static/js/787.3343e89e.chunk.js",
+    "index.html": "/Nodepad/index.html",
+    "main.0c0beebe.css.map": "/Nodepad/static/css/main.0c0beebe.css.map",
+    "main.92d9e8e3.js.map": "/Nodepad/static/js/main.92d9e8e3.js.map",
+    "787.3343e89e.chunk.js.map": "/Nodepad/static/js/787.3343e89e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c0beebe.css",
-    "static/js/main.b9ce4a09.js"
+    "static/js/main.92d9e8e3.js"
   ]
 }
