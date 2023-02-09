@@ -20,6 +20,17 @@ export const Area = styled.textarea<{
   background: ${({ theme }) => theme.colors.lightBackground};
   border-radius: 1px;
   resize: none;
+
+  @media(max-width: 880px) {
+    padding: 24px;
+    max-width: calc(100vw - 288px);
+    max-height: calc(100vh - 48px);
+  }
+  
+  @media(max-width: 675px) {
+    max-width: unset;
+  }
+
   ${(props) =>
     props &&
     css`

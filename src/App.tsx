@@ -1,9 +1,14 @@
 import React from "react";
 import { Sidebar, Textarea } from "./components";
 import useSettings from "./hooks/useSettings";
-import { Container, LeftBox, RightBox } from "./styles";
+import {
+  Container,
+  LeftBox,
+  RightBox,
+} from "./styles";
 import { LightTheme, DarkTheme } from "./theme";
 import { ThemeProvider } from "styled-components";
+import useHandleOutsideClick from "./hooks/useOutsideClick";
 
 const themeName = {
   lightTheme: LightTheme,
@@ -11,7 +16,20 @@ const themeName = {
 };
 
 const App = () => {
-  const { text, settings, defaultTheme, handleSetText, addSettings, handleSetDefaultTheme } = useSettings();
+  const {
+    text,
+    settings,
+    defaultTheme,
+    handleSetText,
+    addSettings,
+    handleSetDefaultTheme,
+  } = useSettings();
+
+  const [showSidebar, setShowSidebar] = React.useState(false);
+  const innerRef = React.useRef(null);
+  useHandleOutsideClick(innerRef, showSidebar, () =>
+    setShowSidebar(!showSidebar)
+  );
 
   return (
     <ThemeProvider theme={themeName[defaultTheme as keyof typeof themeName]}>
