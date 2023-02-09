@@ -17,7 +17,7 @@ export const Area = styled.textarea<{
   max-height: calc(100vh - 80px);
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  background: ${({ theme }) => theme.colors.lightBackground};
   border-radius: 1px;
   resize: none;
   ${(props) =>

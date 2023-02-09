@@ -1,7 +1,7 @@
-import React from "react";
+import { useCallback, useEffect } from "react";
 
 const useHandleOutsideClick = (ref: any, state: any, stateFunc: () => void) => {
-  const detectOutside = React.useCallback(
+  const detectOutside = useCallback(
     (event: any) => {
       if (ref.current && !ref.current.contains(event.target)) {
         stateFunc();
@@ -10,7 +10,7 @@ const useHandleOutsideClick = (ref: any, state: any, stateFunc: () => void) => {
     [ref, stateFunc]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (state) {
       document.addEventListener("mousedown", detectOutside);
     }

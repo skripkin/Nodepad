@@ -1,4 +1,10 @@
-export const setCookie = (name: string, value: object, days: number) => {
+type TCookieValue = object | string | number | Array<string | object | number >;
+
+export const setCookie = (
+  name: string,
+  value: TCookieValue,
+  days: number
+) => {
   if (typeof document !== "undefined") {
     const stringifiedValue = JSON.stringify(value);
     const expires = days
@@ -12,9 +18,7 @@ export const setCookie = (name: string, value: object, days: number) => {
 
 export const getCookie = (name: string) => {
   if (typeof document !== "undefined") {
-    const match = document.cookie.match(
-      new RegExp(`(^|;)\\s*${name}\\s*=\\s*([^;]+)`)
-    );
+    const match = document.cookie.match(`(^|;)\\s*${name}\\s*=\\s*([^;]+)`);
     return match ? JSON.parse(match.pop()!) : null;
   }
   return null;

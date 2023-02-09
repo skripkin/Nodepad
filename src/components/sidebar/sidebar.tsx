@@ -3,12 +3,13 @@ import { TTextAlign } from "../area-dashboard/styles";
 import Icons from "../icons";
 import RadioButton from "../radio-button";
 import Select from "../select";
+import Switch from "../switch";
 import {
   SELECT_FONTWEIGHT,
   SELECT_ITEMS,
   SELECT_COLOR_ITEMS,
   ALIGN_BUTTONS,
-} from "./mock";
+} from "../../mock";
 import {
   AplyButton,
   ButtonTitle,
@@ -34,10 +35,12 @@ type TSettings = {
 interface ISidebarProps {
   title: string;
   settings: TSettings;
+  theme: string;
+  onThemeChange: (themeName: string) => void;
   onSettingSave: (settings: TSettings) => void;
 }
 
-const Sidebar = ({ title, settings, onSettingSave }: ISidebarProps) => {
+const Sidebar = ({ title, settings, theme, onThemeChange, onSettingSave }: ISidebarProps) => {
   const defaultSelectedFontFamily = SELECT_ITEMS.filter(
     (item) => item.value === settings.fontFamily
   )[0];
@@ -82,7 +85,10 @@ const Sidebar = ({ title, settings, onSettingSave }: ISidebarProps) => {
 
   return (
     <Container>
-      <SidebarTitle>{title}</SidebarTitle>
+      <ValuesBox>
+        <SidebarTitle>{title}</SidebarTitle>
+        <Switch theme={theme} onThemeChange={onThemeChange} />
+      </ValuesBox>
       <ValuesBox>
         <Select
           activeValue={fontFamilyName.label}

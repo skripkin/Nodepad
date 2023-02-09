@@ -1,63 +1,45 @@
 import React from "react";
 import { Sidebar, Textarea } from "./components";
-import {
-  ALIGN_BUTTONS,
-  SELECT_COLOR_ITEMS,
-  SELECT_FONTWEIGHT,
-  SELECT_ITEMS,
-} from "./components/sidebar/mock";
-import { getCookie, setCookie } from "./hooks/useCookie";
+import useSettings from "./hooks/useSettings";
 import { Container, LeftBox, RightBox } from "./styles";
+import { LightTheme, DarkTheme } from "./theme";
+import { ThemeProvider } from "styled-components";
 
-const defaultSettings = {
-  fontFamily: SELECT_ITEMS[0].value,
-  fontWeight: SELECT_FONTWEIGHT[0].value,
-  fontSize: 14,
-  lineHeight: 14,
-  letterSpacing: 0.5,
-  color: SELECT_COLOR_ITEMS[0].value,
-  textAlign: ALIGN_BUTTONS[0].id,
+const themeName = {
+  lightTheme: LightTheme,
+  darkTheme: DarkTheme,
 };
 
 const App = () => {
-  const [text, setText] = React.useState("some text");
-  const [settings, setSettings] = React.useState(
-    getCookie("settings") || defaultSettings
-  );
-
-  const addSettings = (value: object) => {
-    setCookie("settings", value, 7);
-    setSettings(value);
-  };
-
-  React.useEffect(() => {
-    const cookieSettings = getCookie("settings") ?? defaultSettings;
-    setSettings(cookieSettings);
-  }, []);
+  const { text, settings, defaultTheme, handleSetText, addSettings, handleSetDefaultTheme } = useSettings();
 
   return (
-    <Container>
-      <LeftBox>
-        <Textarea
-          value={text}
-          onChange={setText}
-          fontFamily={settings.fontFamily}
-          fonrSize={settings.fontSize}
-          fontWeight={settings.fontWeight}
-          lineHeight={settings.lineHeight}
-          letterSpacing={settings.letterSpacing}
-          color={settings.color}
-          textAlign={settings.textAlign}
-        />
-      </LeftBox>
-      <RightBox>
-        <Sidebar
-          title="Text"
-          onSettingSave={(items) => addSettings(items)}
-          settings={{ ...settings }}
-        />
-      </RightBox>
-    </Container>
+    <ThemeProvider theme={themeName[defaultTheme as keyof typeof themeName]}>
+      <Container>
+        <LeftBox>
+          <Textarea
+            value={text}
+            onChange={handleSetText}
+            fontFamily={settings.fontFamily}
+            fonrSize={settings.fontSize}
+            fontWeight={settings.fontWeight}
+            lineHeight={settings.lineHeight}
+            letterSpacing={settings.letterSpacing}
+            color={settings.color}
+            textAlign={settings.textAlign}
+          />
+        </LeftBox>
+        <RightBox>
+          <Sidebar
+            title="Text"
+            theme={defaultTheme}
+            onSettingSave={(items) => addSettings(items)}
+            onThemeChange={handleSetDefaultTheme}
+            settings={{ ...settings }}
+          />
+        </RightBox>
+      </Container>
+    </ThemeProvider>
   );
 };
 

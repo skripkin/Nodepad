@@ -8,10 +8,11 @@ export const SidebarTitle = styled.p`
   font-family: 'Fira Sans';
   font-weight: 600;
   font-size: 11px;
-  line-height: 13px;
+  line-height: 20px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #788994;
+  vertical-align: middle;
+  color: ${({ theme }) => theme.colors.mainColor};
 `;
 
 export const ValuesBox = styled.div`
@@ -46,7 +47,7 @@ export const AplyButton = styled.button`
   justify-content: center;
   width: 100%;
   padding: 8px 12px;
-  background: #27AE60;
+  background: ${({ theme }) => theme.colors.successColor};
   border-radius: 4px;
 `;
 
@@ -55,6 +56,6 @@ export const ButtonTitle = styled.p`
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
-  color: #FFFFFF;
+  color: ${({ theme }) => theme.colors.lightMainColor};
   text-align: center;
 `;

@@ -1,4 +1,4 @@
-import Icons from "../icons";
+import Icons from "./components/icons";
 
 export const SELECT_ITEMS = [
   {
@@ -46,6 +46,11 @@ export const SELECT_COLOR_ITEMS = [
     id: 2,
     label: "#2198ED",
     value: "#2198ED",
+  },
+  {
+    id: 3,
+    label: "#FFFFFF",
+    value: "#FFFFFF",
   },
 ];
 

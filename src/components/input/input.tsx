@@ -14,7 +14,7 @@ const Input = ({ value, onChange, icon, unit, className = "" }: IInputProp) => {
     <Container className={className}>
       {icon && <IconBox>{icon}</IconBox>}
       <DefaultInput
-        type="text"
+        type="number"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

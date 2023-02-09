@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.label`
   width: 25%;
-  background-color: #ffffff;
-  border: 1px solid #e8ecf0;
+  background-color: ${({ theme }) => theme.colors.darkenLightBackground};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-right: unset;
   border-radius: 0;
 
@@ -12,7 +12,7 @@ export const Container = styled.label`
   }
 
   &:last-child {
-    border-right: 1px solid #e8ecf0;
+    border-right: 1px solid ${({ theme }) => theme.colors.border};
     border-radius: 0px 4px 4px 0px;
   }
 `;
@@ -31,8 +31,9 @@ export const Radio = styled.input`
   &:checked ~ ${Icon} {
     & > svg {
       & > g {
+        opacity: ${({ theme }) => theme.opacity};
         & > rect {
-          fill: #2198ed;
+          fill: ${({ theme }) => theme.colors.mainColor};
         }
       }
     }
