@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Nodepad/static/css/main.0c0beebe.css",
-    "main.js": "/Nodepad/static/js/main.ac40fb8c.js",
+    "main.js": "/Nodepad/static/js/main.598004d7.js",
     "static/js/787.3343e89e.chunk.js": "/Nodepad/static/js/787.3343e89e.chunk.js",
     "index.html": "/Nodepad/index.html",
     "main.0c0beebe.css.map": "/Nodepad/static/css/main.0c0beebe.css.map",
-    "main.ac40fb8c.js.map": "/Nodepad/static/js/main.ac40fb8c.js.map",
+    "main.598004d7.js.map": "/Nodepad/static/js/main.598004d7.js.map",
     "787.3343e89e.chunk.js.map": "/Nodepad/static/js/787.3343e89e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c0beebe.css",
-    "static/js/main.ac40fb8c.js"
+    "static/js/main.598004d7.js"
   ]
 }
